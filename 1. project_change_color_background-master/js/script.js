@@ -1,6 +1,5 @@
 btn = document.querySelector(".btn.btn-outline-secondary");
 
-const color = ['red', 'blue', ]
 btn.addEventListener('click', changeBackground);
 
 function changeBackground(){

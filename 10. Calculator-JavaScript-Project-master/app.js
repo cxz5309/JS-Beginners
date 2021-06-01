@@ -13,9 +13,9 @@ function onCalculateBtnClick(e){
     if (targetText.nodeType == 3) targetText = targetText.parentNode; // defeat Safari bug
 
     let text = targetText.dataset.num;
-    if(screen.value.includes('.') && text === '.'){
-      return;
-    } 
+    // if(screen.value.includes('.') && text === '.'){
+    //   return;
+    // } 
     screen.value += text;
 }
 

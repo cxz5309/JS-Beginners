@@ -1,0 +1,41 @@
+11 배운점
+Element.innerHTML()
+setTimeout() , setInterval()
+Node.appendChild()
+e.preventDefault();
+classList.add(), classList.remove()
+
+수정사항 1
+오류창 시간 지나도 사라지지 않게 하기
+
+수정사항 2
+클릭한순간 애니메이션 시간동안 클릭 동작 안하기
+
+수정사항 3 
+5초 후 삭제 제거
+
+12 배운점
+classList.toggle()
+debugger -> https://ko.javascript.info/debugging-chrome -> showFeedback()????
+https://developer.mozilla.org/ko/docs/Web/API/Element/insertAdjacentHTML
+localStorage -> https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage
+
+수정사항 1 
+completed 상태 유지
+
+13 배운점
+메뉴바 상단에 고정시키기
+-> https://www.daleseo.com/css-position-fixed-navigation/
+::before -> http://blog.hivelab.co.kr/%EA%B3%B5%EC%9C%A0before%EC%99%80after-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%A0%95%EC%B2%B4%EB%8A%94/
+Number.prototype.toFixed()
+
+수정사항 1
+메뉴바 상단 고정
+
+수정사항 2
+제거 기능 활성화
+
+수정사항 3
+html 기본 가격 수정
+
+14 배운점
