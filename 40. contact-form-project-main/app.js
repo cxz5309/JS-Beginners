@@ -1,34 +1,57 @@
+
 let sendButton = document.getElementById('send');
 let resetButton = document.getElementById('reset');
 let form = document.getElementById('form');
+let nameBox = document.getElementById('name');
+let emailBox = document.getElementById('email');
+let messageBox = document.getElementById('message');
 
+const msgLimit = 100;
+let savedItem;
 
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-})
+init = ()=>{    
+    savedItem = JSON.parse(getLocalStorage());
+    if(savedItem === 'undefined' || savedItem === null) savedItem = [];
 
-resetButton.addEventListener('click', function(){
-    let name = document.getElementById('name');
-    let email = document.getElementById('email');
-    let message = document.getElementById('message');
+    form.addEventListener('submit', (event)=>{
+        event.preventDefault();
+    })
 
-    name.value = '';
-    email.value = '';
-    message.value = '';
-})
+    sendButton.addEventListener('click', ()=>{
+        //자동 삭제 기능 추가
+        autoRemove(savedItem, msgLimit);
 
-sendButton.addEventListener('click', function(e){
-    let name = document.getElementById('name');
-    let email = document.getElementById('email');
-    let message = document.getElementById('message');
+        savedItem.push(makeMessage());
+        localStorage.setItem('allMessages', JSON.stringify(savedItem));
+    });
 
-    name = name.value;
-    localStorage.setItem('name', name);
-    
-    email = email.value;
-    localStorage.setItem('email', email);
+    resetButton.addEventListener('click', ()=>{
+        nameBox.value = "";
+        emailBox.value = "";
+        messageBox.value = "";
+    });
+}
 
-    message = message.value;
-    localStorage.setItem('message', message);
-    
-})
+autoRemove = (arr, limit) =>{
+    if(arr.length > limit)
+        arr.shift();
+}
+
+makeMessage = ()=>{
+    const newName = nameBox.value;
+    const newEmail = emailBox.value;
+    const newMessage = messageBox.value;
+    const newDate = Date().toLocaleString();
+    return {
+        name : newName,
+        email : newEmail,
+        message : newMessage,
+        date : newDate
+    }
+}
+getLocalStorage = () =>{
+    let allMessages = localStorage.getItem('allMessages');
+    return allMessages;
+}
+
+document.addEventListener("DOMContentLoaded", init);

@@ -1,9 +1,12 @@
-let button = document.getElementById('btn');
+let button = document.getElementById('btn')
 
-button.addEventListener('click', function(){
-    let word = document.getElementById('str').value;
-    let count = word.length;
-    let outputDiv = document.getElementById('output');
+let word = document.getElementById('str');
+let outputDiv = document.getElementById('output');
 
-    outputDiv.innerHTML = `<h1>${count}</h1>`
-});
+init = function (){
+    button.addEventListener('click', ()=>{
+        outputDiv.innerHTML = `<h1>${word.value.length}</h1>`;
+    })
+}
+
+document.addEventListener('DOMContentLoaded', init);
